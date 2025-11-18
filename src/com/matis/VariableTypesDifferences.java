@@ -7,8 +7,14 @@ public class VariableTypesDifferences {
         byte var1 = 1;
         byte var2 = var1;
 
+        System.out.println("Before change:");
+        System.out.println("var1: " + var1);
+        System.out.println("var2: " + var2);
+        System.out.println();
+
         var1 = 2;
 
+        System.out.println("After change:");
         System.out.println("var1: " + var1);
         System.out.println("var2: " + var2);
     }
@@ -17,8 +23,15 @@ public class VariableTypesDifferences {
         Point p1 = new Point(1, 2);
         Point p2 = p1;
 
+        System.out.println("Before change:");
+
+        pointerDisplayFormating("p1", p1);
+        pointerDisplayFormating("p2", p2);
+        System.out.println();
+
         p1.x = 3;
 
+        System.out.println("After change:");
         pointerDisplayFormating("p1", p1);
         pointerDisplayFormating("p2", p2);
     }
@@ -31,11 +44,17 @@ public class VariableTypesDifferences {
         String string1 = "string";
         String string2 = string1;
 
-        string1 = "test";
-
+        System.out.println("Before change:");
         System.out.println("string1: " + string1);
         System.out.println("string2: " + string2);
+        System.out.println();
 
+        string1 = "test";
+
+        System.out.println("After change:");
+        System.out.println("string1: " + string1);
+        System.out.println("string2: " + string2);
+        System.out.println();
         System.out.println("*String is immutable");
     }
 }
