@@ -20,6 +20,9 @@ public class Main {
 
         displayBreak("Number Formating");
         NumberFormating.formatOperations();
+
+        displayBreak("Personal Data");
+        InputData.personalData();
     }
 
     private static void displayBreak(String title){
