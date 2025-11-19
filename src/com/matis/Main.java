@@ -12,6 +12,8 @@ public class Main {
         stringMethodsDisplay();
 
         ArraysDisplay();
+
+        ArithmeticDisplay();
     }
 
     private static void displayBreak(String title){
@@ -54,5 +56,14 @@ public class Main {
 
         displayBreak("Multidimensional Arrays");
         ArraysFundaments.multiDimensionalArray();
+    }
+
+    private static void ArithmeticDisplay(){
+        displayBreak("Arithmetic Expressions");
+        ArithmeticsExpressions.basicsOperations();
+
+        displayBreak("Arithmetic Shorthands");
+
+        ArithmeticsExpressions.shorthands();
     }
 }
