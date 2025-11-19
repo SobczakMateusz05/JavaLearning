@@ -14,6 +14,9 @@ public class Main {
         ArraysDisplay();
 
         ArithmeticDisplay();
+
+        displayBreak("Math Class");
+        MathClass.operations();
     }
 
     private static void displayBreak(String title){
