@@ -17,6 +17,9 @@ public class Main {
 
         displayBreak("Math Class");
         MathClass.operations();
+
+        displayBreak("Number Formating");
+        NumberFormating.formatOperations();
     }
 
     private static void displayBreak(String title){
