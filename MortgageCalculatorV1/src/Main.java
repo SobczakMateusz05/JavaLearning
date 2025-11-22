@@ -6,7 +6,7 @@ class Main {
     private static final byte MONTHS_IN_YEAR = 12;
     private static final Scanner scanner = new Scanner(System.in);
 
-    public void main() {
+     static void main() {
         int principal = providePrincipal();
         double monthlyInterest = provideMonthlyInterest();
         int monthsPeriod = provideMonthsPeriod();
@@ -15,11 +15,11 @@ class Main {
         String formattedMortgage = NumberFormat.getCurrencyInstance().format(mortgage);
 
         displayMortgage(formattedMortgage);
+
+        scanner.close();
     }
 
-    private static double calculateMonthlyPayment(int principal, double monthlyInterest, int period) {
-        int monthsPeriod = period * MONTHS_IN_YEAR;
-
+    private static double calculateMonthlyPayment(int principal, double monthlyInterest, int monthsPeriod) {
         return principal
                 * (monthlyInterest * Math.pow((1 + monthlyInterest), monthsPeriod)
                 / (Math.pow((monthlyInterest + 1), monthsPeriod) - 1));
