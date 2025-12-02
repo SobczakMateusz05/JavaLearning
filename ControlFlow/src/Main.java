@@ -6,21 +6,15 @@ class Main {
         displayBreak("Logical Operator");
         LogicalOperator.isEligible();
 
-        displayBreak("If Statement");
-        displayBreak("Temperature");
-
-        IfStatement.temperature();
-
-        displayBreak("Income");
-
-        IfStatement.income();
+        IfStatement.displayEverything();
 
         displayBreak("Switch Statement");
-
         SwitchStatement.checkRole();
+
+        Loops.displayEverything();
     }
 
-    private static void displayBreak(String title){
+    public static void displayBreak(String title){
         System.out.println("----------------");
         System.out.println(title + ":");
         System.out.println();

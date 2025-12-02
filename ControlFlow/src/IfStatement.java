@@ -3,13 +3,22 @@ import java.util.Scanner;
 public class IfStatement {
     final static Scanner scanner = new Scanner(System.in);
 
-    public static void temperature() {
+    public static void displayEverything() {
+        Main.displayBreak("If Statement");
+        Main.displayBreak("Temperature");
+        temperature();
+
+        Main.displayBreak("Income");
+        income();
+    }
+
+    private static void temperature() {
         float temperature = provideTemperature();
 
         checkTemperature(temperature);
     }
 
-    public static void income(){
+    private static void income(){
         int income = provideIncome() ;
         boolean hasHighIncome = (income > 100_000);
         String className = hasHighIncome ? "First" : "Economic" ; // Ternary operator
