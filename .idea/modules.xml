@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/FizzBuzz/FizzBuzz.iml" filepath="$PROJECT_DIR$/FizzBuzz/FizzBuzz.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/JavaLearning.iml" filepath="$PROJECT_DIR$/.idea/JavaLearning.iml" />
       <module fileurl="file://$PROJECT_DIR$/MortageCalculatorV1/MortageCalculatorV1.iml" filepath="$PROJECT_DIR$/MortageCalculatorV1/MortageCalculatorV1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MortgageCalculatorV2/MortgageCalculatorV2.iml" filepath="$PROJECT_DIR$/MortgageCalculatorV2/MortgageCalculatorV2.iml" />
     </modules>
   </component>
 </project>
