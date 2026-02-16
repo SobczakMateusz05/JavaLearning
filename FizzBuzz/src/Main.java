@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-class Main {
+public class Main {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main() {
-        stringBuilderAnswer(provideNumber());
+        stringAnswer(provideNumber());
 
         scanner.close();
     }
@@ -15,8 +15,8 @@ class Main {
     }
 
     private static void displayAnswer(int number) { // My first solution
-        boolean isDivisibleByFive = (number % 5 == 0);
         boolean isDivisibleByThree = (number % 3 == 0);
+        boolean isDivisibleByFive = (number % 5 == 0);
 
         if(isDivisibleByFive)
             System.out.print("Fizz");
@@ -28,13 +28,13 @@ class Main {
             System.out.print(number);
     }
 
-    private static void stringBuilderAnswer(int number) {
+    private static void stringAnswer(int number) {
         StringBuilder sb = new StringBuilder();
 
-        if(number % 5 == 0)
+        if(number % 3 == 0)
             sb.append("Fizz");
 
-        if(number % 3 == 0)
+        if(number % 5 == 0)
             sb.append("Buzz");
 
         String answer = sb.toString();
