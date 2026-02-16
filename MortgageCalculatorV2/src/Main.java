@@ -10,7 +10,8 @@ public class Main {
     private static final String INTEREST_ENTER_RANGE = "Enter a value greater than 0 and less than or equal to 30";
     private static final String PERIOD_ENTER_RANGE = "Enter a value between 1 and 30";
 
-    private static final String MORTGAGE_DISPLAY_LABEL = "Mortgage: ";
+    private static final String MORTGAGE_DISPLAY_LABEL = "Monthly Payments: ";
+
 
     private static final byte PERCENT = 100;
     private static final byte MONTHS_IN_YEAR = 12;
@@ -21,10 +22,8 @@ public class Main {
         double monthlyInterest = provideMonthlyInterest();
         int monthsPeriod = provideMonthsPeriod();
 
-        double mortgage = CalculationUtils.calculateMonthlyPayment(principal, monthlyInterest, monthsPeriod);
-        String formattedMortgage = NumberFormat.getCurrencyInstance().format(mortgage);
-
-        displayMortgage(formattedMortgage);
+        displayMortgage(principal, monthlyInterest, monthsPeriod);
+        displayPaymentSchedule(principal, monthlyInterest, monthsPeriod);
     }
 
     private static int providePrincipal() {
@@ -43,7 +42,7 @@ public class Main {
     }
 
     private static double provideMonthlyInterest() {
-       double annualInterest;
+        double annualInterest;
 
         while (true) {
             System.out.print(INTEREST_ENTER_LABEL);
@@ -73,7 +72,28 @@ public class Main {
         }
     }
 
-    private static void displayMortgage(String mortgage) {
-        System.out.println(MORTGAGE_DISPLAY_LABEL + mortgage);
+    private static void displayMortgage(int principal, double monthlyInterest, int monthsPeriod) {
+        double mortgage = CalculationUtils.calculateMonthlyPayment(principal, monthlyInterest, monthsPeriod);
+        String formattedMortgage = NumberFormat.getCurrencyInstance().format(mortgage);
+
+        System.out.println("MORTGAGE");
+        System.out.println("-------");
+        System.out.println(MORTGAGE_DISPLAY_LABEL + formattedMortgage);
+    }
+
+    private static void displayPaymentSchedule(int principal, double monthlyInterest, int monthsPeriod) {
+        System.out.println("PAYMENT SCHEDULED");
+        System.out.println("-----------------");
+
+        int numberOfPaymentsMade = 1;
+        double result = principal;
+
+        while (result > 0) {
+            result = CalculationUtils.calculatePrincipalAfterPayment(principal, monthlyInterest, monthsPeriod, numberOfPaymentsMade);
+
+            numberOfPaymentsMade++;
+
+            System.out.println(NumberFormat.getCurrencyInstance().format(result));
+        }
     }
 }
