@@ -1,5 +1,5 @@
-class Main {
-    static void main() {
+public class Main {
+     public static void main() {
         displayBreak("Comparison Operator");
         ComparisonOperator.operators();
 

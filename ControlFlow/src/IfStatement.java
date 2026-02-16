@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class IfStatement {
-    final static Scanner scanner = new Scanner(System.in);
+    private final static Scanner scanner = new Scanner(System.in);
 
     public static void displayEverything() {
         Main.displayBreak("If Statement");
