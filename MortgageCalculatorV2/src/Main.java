@@ -1,17 +1,27 @@
 import java.text.NumberFormat;
 import java.util.Scanner;
 
-class Main {
+public class Main {
+    private static final String PRINCIPAL_ENTER_LABEL = "Principal (1K - 1M): ";
+    private static final String INTEREST_ENTER_LABEL = "Annual Interest Rate: ";
+    private static final String PERIOD_ENTER_LABEL = "Period (Years): ";
+
+    private static final String PRINCIPAL_ENTER_RANGE = "Enter a number between 1,000 and 1,000,000";
+    private static final String INTEREST_ENTER_RANGE = "Enter a value greater than 0 and less than or equal to 30";
+    private static final String PERIOD_ENTER_RANGE = "Enter a value between 1 and 30";
+
+    private static final String MORTGAGE_DISPLAY_LABEL = "Mortgage: ";
+
     private static final byte PERCENT = 100;
     private static final byte MONTHS_IN_YEAR = 12;
     private static final Scanner scanner = new Scanner(System.in);
 
-    static void main() {
+    public static void main() {
         int principal = providePrincipal();
         double monthlyInterest = provideMonthlyInterest();
         int monthsPeriod = provideMonthsPeriod();
 
-        double mortgage = calculateMonthlyPayment(principal, monthlyInterest, monthsPeriod);
+        double mortgage = CalculationUtils.calculateMonthlyPayment(principal, monthlyInterest, monthsPeriod);
         String formattedMortgage = NumberFormat.getCurrencyInstance().format(mortgage);
 
         displayMortgage(formattedMortgage);
@@ -19,23 +29,18 @@ class Main {
         scanner.close();
     }
 
-    private static double calculateMonthlyPayment(int principal, double monthlyInterest, int monthsPeriod) {
-        return principal
-                * (monthlyInterest * Math.pow((1 + monthlyInterest), monthsPeriod)
-                / (Math.pow((monthlyInterest + 1), monthsPeriod) - 1));
-    }
-
     private static int providePrincipal() {
         int principal;
 
         while (true) {
-            System.out.print("Principal (1K - 1M): ");
+            System.out.print(PRINCIPAL_ENTER_LABEL);
             principal = scanner.nextInt();
 
-            if (principal >= 1_000 && principal <= 1_000_000)
+            if (principal >= 1_000 && principal <= 1_000_000) {
                 return principal;
+            }
 
-            System.out.println("Enter a number between 1,000 and 1,000,000");
+            System.out.println(PRINCIPAL_ENTER_RANGE);
         }
     }
 
@@ -43,13 +48,14 @@ class Main {
        double annualInterest;
 
         while (true) {
-            System.out.print("Annual Interest Rate: ");
+            System.out.print(INTEREST_ENTER_LABEL);
             annualInterest = scanner.nextDouble();
 
-            if (annualInterest > 0 && annualInterest <= 30)
+            if (annualInterest > 0 && annualInterest <= 30) {
                 return annualInterest / PERCENT / MONTHS_IN_YEAR;
+            }
 
-            System.out.println("Enter a value greater than 0 and less than or equal to 30");
+            System.out.println(INTEREST_ENTER_RANGE);
         }
     }
 
@@ -57,18 +63,19 @@ class Main {
         int yearsPeriod;
 
         while (true) {
-            System.out.print("Period (Years): ");
+            System.out.print(PERIOD_ENTER_LABEL);
             yearsPeriod = scanner.nextInt();
 
-            if (yearsPeriod >= 1 && yearsPeriod <= 30)
+            if (yearsPeriod >= 1 && yearsPeriod <= 30) {
                 return yearsPeriod * MONTHS_IN_YEAR;
+            }
 
 
-            System.out.println("Enter a value between 1 and 30");
+            System.out.println(PERIOD_ENTER_RANGE);
         }
     }
 
     private static void displayMortgage(String mortgage) {
-        System.out.println("Mortgage: " + mortgage);
+        System.out.println(MORTGAGE_DISPLAY_LABEL + mortgage);
     }
 }
