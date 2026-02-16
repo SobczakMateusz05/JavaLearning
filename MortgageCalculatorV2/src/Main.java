@@ -25,8 +25,6 @@ public class Main {
         String formattedMortgage = NumberFormat.getCurrencyInstance().format(mortgage);
 
         displayMortgage(formattedMortgage);
-
-        scanner.close();
     }
 
     private static int providePrincipal() {
