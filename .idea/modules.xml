@@ -3,9 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Basics/Basics.iml" filepath="$PROJECT_DIR$/Basics/Basics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EmployeeWage/EmployeeWage.iml" filepath="$PROJECT_DIR$/EmployeeWage/EmployeeWage.iml" />
       <module fileurl="file://$PROJECT_DIR$/FizzBuzz/FizzBuzz.iml" filepath="$PROJECT_DIR$/FizzBuzz/FizzBuzz.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/JavaLearning.iml" filepath="$PROJECT_DIR$/.idea/JavaLearning.iml" />
       <module fileurl="file://$PROJECT_DIR$/MortageCalculatorV1/MortageCalculatorV1.iml" filepath="$PROJECT_DIR$/MortageCalculatorV1/MortageCalculatorV1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MortgageCalculatorV2/MortgageCalculatorV2.iml" filepath="$PROJECT_DIR$/MortgageCalculatorV2/MortgageCalculatorV2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/OOP.iml" filepath="$PROJECT_DIR$/OOP/OOP.iml" />
     </modules>
   </component>
 </project>
